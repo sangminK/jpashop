@@ -1,5 +1,6 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -21,6 +22,7 @@ public class MemberRepositoryTest {
     @Transactional  // 테스트 끝나면 DB rollback
     @Rollback(false) // rollback 안하고 commit 하려면 추
     public void testMember() throws Exception {
+        /*
         // given
         Member member = new Member();
         member.setUsername("memberA");
@@ -33,5 +35,7 @@ public class MemberRepositoryTest {
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
         Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
         Assertions.assertThat(findMember).isEqualTo(member);    // 같은 영속성 안에서는 id 값이 같으면 같은 엔티티로 식별
+
+         */
     }
 }
