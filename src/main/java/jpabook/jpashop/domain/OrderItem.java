@@ -14,11 +14,11 @@ public class OrderItem {
     @Column(name = "order_item_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Item item;
 
-    @ManyToOne  // 외래키가 있는 주문상품이 연관관계의 주인
+    @ManyToOne(fetch = FetchType.LAZY)  // 외래키가 있는 주문상품이 연관관계의 주인
     @JoinColumn(name = "order_id")
     private Order order;
 
