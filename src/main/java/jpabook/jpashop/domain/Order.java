@@ -21,10 +21,10 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)   // order만 저장하면, orderItems도 같이
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;  // 1:1관계의 경우, FK를 양쪽에 둘 다 둘 수 있다 > 자주 접근하는 쪽에 두는게
 
@@ -32,4 +32,6 @@ public class Order {
 
     @Enumerated(EnumType.STRING)  // ORDINAL(default) : 숫자, STRING : 문자
     private OrderStatus status; // 주문상태 [ORDER, CANCEL]
+
+
 }
