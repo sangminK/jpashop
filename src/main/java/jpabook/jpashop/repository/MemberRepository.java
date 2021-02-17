@@ -1,6 +1,7 @@
 package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -8,10 +9,14 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    @PersistenceContext
-    private EntityManager em;
+    private final EntityManager em;
+    
+//    public MemberRepository(EntityManager em) {
+//        this.em = em;
+//    }
 
     public void save(Member member) {
         em.persist(member); // 영속성 컨텍스트에 member 엔티티를 넣고, 트랜잭션이 커밋되는 시점에 DB에 반영(insert)
