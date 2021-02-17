@@ -13,7 +13,7 @@ import java.util.List;
 public class MemberRepository {
 
     private final EntityManager em;
-    
+
 //    public MemberRepository(EntityManager em) {
 //        this.em = em;
 //    }
