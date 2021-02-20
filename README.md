@@ -1,1 +1,2 @@
-# 스프링 부트 & JPA 프로젝트
+# Simple Shop
+## 스프링 부트 & JPA 

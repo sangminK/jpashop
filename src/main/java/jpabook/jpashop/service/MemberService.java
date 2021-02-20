@@ -15,6 +15,7 @@ import java.util.List;
 public class MemberService {
 
     /*
+    * "스프링 필드 주입 대신에 생성자 주입을 사용하자"
     * 방법1 필드에 @Autowired > 변경 불가한 단점
     * 방법2 setter > 런타임에 변경 가능해져 버림..
     * 방법3 생성자 > 변경 가능 & 생성할 때 끝남
@@ -22,7 +23,7 @@ public class MemberService {
     * 방법5 lombok @RequiredArgsConstructor : final 필드만 만들어줌
     * */
 
-    // final : 값세팅 안하면 에러 > 컴파일 시점에 체크 가능해짐
+    // final : 값세팅 안하면 에러 > 컴파일 시점에 memberRepository를 설정하지 않는 오류를 체크 가능해짐
     private final MemberRepository memberRepository;
 
     // @Autowired 선언 안해도, 생성자 1개면 스프링이 알아서 주입해줌
