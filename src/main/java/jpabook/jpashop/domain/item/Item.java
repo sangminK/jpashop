@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
-@Getter
+@Getter @Setter
 //@Setter : 데이터를 set 하는 것이 아니라, 객체지향 관점으로
 // ex.재고도 비즈니스 로직을 통해 변경(setQuantity(50) X)
 public abstract class Item {
