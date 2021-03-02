@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 @SpringBootTest
 public class MemberRepositoryTest {
 
-    @Autowired MemberRepository memberRepository;
+    //@Autowired MemberRepository memberRepository;
 
     @Test
     @Transactional  // 테스트 끝나면 DB rollback
